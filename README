@@ -1,0 +1,11 @@
+# Command:
+/cad2/ece1718s/eclipse/eclipse
+
+# Compile C:
+cd to build 
+cmake ..
+make
+
+# Run binary
+cd ../bin/
+
