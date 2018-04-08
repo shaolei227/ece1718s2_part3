@@ -1,0 +1,19 @@
+package task4;
+
+actor Printer () uint(size=32) SumRead ==> :
+
+  uint(size=32) nbFrame;
+  
+  //action initialize
+  initialize ==>
+  do
+	nbFrame := 1;
+  end
+  
+  action SumRead:[a] ==>
+  do
+    println("Frame: " + nbFrame + " SAD: " + a);
+    nbFrame := nbFrame + 1;
+  end
+  
+end

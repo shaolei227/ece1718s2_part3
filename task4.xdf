@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<XDF name="task4">
+    <Instance id="Source">
+        <Class name="task4.Source"/>
+    </Instance>
+    <Instance id="Duplicate">
+        <Class name="task4.Duplicate"/>
+    </Instance>
+    <Instance id="Approx">
+        <Class name="task4.Approx"/>
+    </Instance>
+    <Instance id="AbsDiff">
+        <Class name="task4.AbsDiff"/>
+    </Instance>
+    <Instance id="Sum">
+        <Class name="task4.Sum"/>
+    </Instance>
+    <Instance id="Printer">
+        <Class name="task4.Printer"/>
+    </Instance>
+    <Connection dst="Duplicate" dst-port="ByteIn" src="Source" src-port="Stream"/>
+    <Connection dst="Duplicate" dst-port="EOF" src="Source" src-port="EOF"/>
+    <Connection dst="Approx" dst-port="ByteIn" src="Duplicate" src-port="ByteOut1"/>
+    <Connection dst="AbsDiff" dst-port="ByteIn2" src="Duplicate" src-port="ByteOut2"/>
+    <Connection dst="AbsDiff" dst-port="ByteIn1" src="Approx" src-port="ByteOut"/>
+    <Connection dst="Printer" dst-port="SumRead" src="Sum" src-port="sum"/>
+    <Connection dst="Sum" dst-port="ByteIn" src="AbsDiff" src-port="ByteOut"/>
+</XDF>
